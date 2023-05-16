@@ -35,9 +35,3 @@ class MenuBuilder:
             ),
             columns=["dish_name", "ingredients", "price", "restrictions"]
         )
-        # dishes = {'' for d in self.menu_data.dishes}
-        # print(dishes)
-
-        # if restriction is None:
-        #     return pd.DataFrame(data=self.menu_data.dishes)
-        # return pd.DataFrame(data=self.menu_data.dishes, )
