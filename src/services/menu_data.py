@@ -14,16 +14,15 @@ class MenuData:
             return reader
 
     def __menu_data_builder(self):
-        dishes = set()
+        dishes = {}
         for d in self.reader:
             dish = Dish(d["dish"], float(d["price"]))
             amount = int(d["recipe_amount"])
             ingredient = (Ingredient(d["ingredient"]))
 
-            dishes.add(dish)
+            if dish not in dishes:
+                dishes[dish] = dish
 
-            my_tuple = tuple(dishes)
-
-            my_tuple[0].add_ingredient_dependency(ingredient, amount)
+            dishes[dish].add_ingredient_dependency(ingredient, amount)
 
         return dishes
