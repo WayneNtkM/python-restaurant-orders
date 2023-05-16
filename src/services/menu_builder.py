@@ -32,6 +32,7 @@ class MenuBuilder:
                     d.name, d.get_ingredients(), d.price, d.get_restrictions()
                 ] for d in self.menu_data.dishes
                 if restriction not in d.get_restrictions()
+                and self.inventory.check_recipe_availability(d.recipe)
             ),
             columns=["dish_name", "ingredients", "price", "restrictions"]
         )
